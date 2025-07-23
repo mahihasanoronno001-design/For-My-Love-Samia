@@ -582,7 +582,38 @@
     <footer class="py-8 px-4 bg-pink-100">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="cursive text-3xl font-bold text-pink-600 mb-4">Forever & Always</h2>
-            <p class="text-pink-700">Made with 💖 for my pookie</p>
+            <p class="text-pink-700">Made with 💖 for my pookie</p> 
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'960da0e0d6a4771c',t:'MTc1Mjc5NjA4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<!-- Audio Section -->
+<div class="mt-6 flex flex-col items-center space-y-4">
+  <button id="playMusic" class="bg-pink-600 text-white px-6 py-2 rounded-xl shadow-lg hover:bg-pink-700 transition">
+    ▶️ Play Audio (Tum Se Hi)
+  </button>
+  <audio id="ourSong" src="Assets/Full Video_ Tum Se Hi  Jab We Met  Kareena Kapoor, Shahid Kapoor  Mohit Chauhan  Pritam.mp3"></audio>
+
+  <div class="mt-4">
+    <a href="https://youtu.be/mt9xg0mmt28?list=RDmt9xg0mmt28" target="_blank"
+      class="inline-block bg-red-600 text-white px-4 py-2 rounded-full shadow hover:bg-red-700 transition">
+      ▶️ Watch on YouTube
+    </a>
+  </div>
+</div>
+
+<script>
+  const audio = document.getElementById("ourSong");
+  const playButton = document.getElementById("playMusic");
+
+  playButton.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      playButton.textContent = "⏸ Pause Audio";
+    } else {
+      audio.pause();
+      playButton.textContent = "▶️ Play Audio (Tum Se Hi)";
+    }
+  });
+</script>
+
     </footer>
 
     <!-- Modal for Adding Photos -->
@@ -1124,36 +1155,6 @@ Your Loving Partner 💖</textarea>
             }, 3000);
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'960da0e0d6a4771c',t:'MTc1Mjc5NjA4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-<!-- Audio Section -->
-<div class="mt-6 flex flex-col items-center space-y-4">
-  <button id="playMusic" class="bg-pink-600 text-white px-6 py-2 rounded-xl shadow-lg hover:bg-pink-700 transition">
-    ▶️ Play Audio (Tum Se Hi)
-  </button>
-  <audio id="ourSong" src="Assets/Full Video_ Tum Se Hi  Jab We Met  Kareena Kapoor, Shahid Kapoor  Mohit Chauhan  Pritam.mp3"></audio>
-
-  <div class="mt-4">
-    <a href="https://youtu.be/mt9xg0mmt28?list=RDmt9xg0mmt28" target="_blank"
-      class="inline-block bg-red-600 text-white px-4 py-2 rounded-full shadow hover:bg-red-700 transition">
-      ▶️ Watch on YouTube
-    </a>
-  </div>
-</div>
-
-<script>
-  const audio = document.getElementById("ourSong");
-  const playButton = document.getElementById("playMusic");
-
-  playButton.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play();
-      playButton.textContent = "⏸ Pause Audio";
-    } else {
-      audio.pause();
-      playButton.textContent = "▶️ Play Audio (Tum Se Hi)";
-    }
-  });
-</script>
 
 </body>
 </html>
