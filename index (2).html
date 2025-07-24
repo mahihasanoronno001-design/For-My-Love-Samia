@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -762,7 +760,47 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
-  </script>
+  </script> 
+    <script>
+  const audio1 = document.getElementById("romanticMusic");
+  const audio2 = document.getElementById("ourSong");
+  const playBtn1 = document.querySelector(".play-music-btn");
+  const playBtn2 = document.getElementById("playMusic");
+
+  // Universal pause function
+  function pauseAllAudio() {
+    audio1.pause();
+    audio2.pause();
+    if (playBtn1) playBtn1.innerText = "🎵 Our Song";
+    if (playBtn2) playBtn2.innerText = "▶️ My heart never misses a beat to say -";
+  }
+
+  if (playBtn1 && audio1) {
+    playBtn1.addEventListener("click", () => {
+      if (audio1.paused) {
+        pauseAllAudio();
+        audio1.play();
+        playBtn1.innerText = "⏸ Pause Song";
+      } else {
+        audio1.pause();
+        playBtn1.innerText = "🎵 Our Song";
+      }
+    });
+  }
+
+  if (playBtn2 && audio2) {
+    playBtn2.addEventListener("click", () => {
+      if (audio2.paused) {
+        pauseAllAudio();
+        audio2.play();
+        playBtn2.innerText = "⏸ Pause Audio";
+      } else {
+        audio2.pause();
+        playBtn2.innerText = "▶️ My heart never misses a beat to say -";
+      }
+    });
+  }
+</script>
 </body>
 </html>
 
@@ -1343,45 +1381,6 @@ Your Loving Partner 💖</textarea>
             }, 3000);
         });
     </script>
-<script>
-  const audio1 = document.getElementById("romanticMusic");
-  const audio2 = document.getElementById("ourSong");
-  const playBtn1 = document.querySelector(".play-music-btn");
-  const playBtn2 = document.getElementById("playMusic");
 
-  // Universal pause function
-  function pauseAllAudio() {
-    audio1.pause();
-    audio2.pause();
-    if (playBtn1) playBtn1.innerText = "🎵 Our Song";
-    if (playBtn2) playBtn2.innerText = "▶️ My heart never misses a beat to say -";
-  }
-
-  if (playBtn1 && audio1) {
-    playBtn1.addEventListener("click", () => {
-      if (audio1.paused) {
-        pauseAllAudio();
-        audio1.play();
-        playBtn1.innerText = "⏸ Pause Song";
-      } else {
-        audio1.pause();
-        playBtn1.innerText = "🎵 Our Song";
-      }
-    });
-  }
-
-  if (playBtn2 && audio2) {
-    playBtn2.addEventListener("click", () => {
-      if (audio2.paused) {
-        pauseAllAudio();
-        audio2.play();
-        playBtn2.innerText = "⏸ Pause Audio";
-      } else {
-        audio2.pause();
-        playBtn2.innerText = "▶️ My heart never misses a beat to say -";
-      }
-    });
-  }
-</script>
 </body>
 </html>
