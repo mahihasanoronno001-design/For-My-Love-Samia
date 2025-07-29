@@ -674,20 +674,41 @@
 <head>
   <title>Play/Stop Button</title>
 </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Play / Stop Song Button</title>
+  <style>
+    .play-music-btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #f06292;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .play-music-btn:hover {
+      background-color: #ec407a;
+    }
+  </style>
+</head>
 <body>
 
   <!-- Toggle Button -->
-  <button id="musicBtn" onclick="toggleMusic()">🎵 Play Song</button>
+  <button class="play-music-btn" onclick="toggleMusic()" id="musicButton">🎵 Our Song</button>
 
-  <!-- Audio Element -->
+  <!-- Audio -->
   <audio id="romanticMusic">
     <source src="Assets/Full Video_ Tum Se Hi  Jab We Met  Kareena Kapoor, Shahid Kapoor  Mohit Chauhan  Pritam.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
+  <!-- Script -->
   <script>
     const audio = document.getElementById('romanticMusic');
-    const button = document.getElementById('musicBtn');
+    const button = document.getElementById('musicButton');
     let isPlaying = false;
 
     function toggleMusic() {
@@ -698,7 +719,7 @@
       } else {
         audio.pause();
         audio.currentTime = 0;
-        button.textContent = "🎵 Play Song";
+        button.textContent = "🎵 Our Song";
         isPlaying = false;
       }
     }
