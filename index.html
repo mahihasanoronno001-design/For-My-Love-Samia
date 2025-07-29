@@ -668,11 +668,20 @@
 
   <h1 style="font-weight: 700;">Our Love <span style="color:#ec407a;">Timeline</span></h1>
 
-  <button class="play-music-btn" onclick="document.getElementById('romanticMusic').play()">🎵 Our Song </button>
+ <button class="play-music-btn" onclick="document.getElementById('romanticMusic').play()">🎵 Our Song</button>
+<button class="stop-music-btn" onclick="stopMusic()">⏹️ Stop</button>
 
-  <audio id="romanticMusic">
-    <source src="Assets/Full Video_ Tum Se Hi  Jab We Met  Kareena Kapoor, Shahid Kapoor  Mohit Chauhan  Pritam.mp3" type="audio/mpeg">
- </audio> 
+<audio id="romanticMusic">
+  <source src="Assets/Full Video_ Tum Se Hi  Jab We Met  Kareena Kapoor, Shahid Kapoor  Mohit Chauhan  Pritam.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function stopMusic() {
+    var audio = document.getElementById('romanticMusic');
+    audio.pause();
+    audio.currentTime = 0;
+  }
+</script> 
   <div class="timeline">
     <div class="timeline-entry left" data-aos="fade-right">
       <div class="heart-dot">❤</div>
