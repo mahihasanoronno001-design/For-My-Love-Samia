@@ -704,27 +704,6 @@
     <source src="Assets/Full Video_ Tum Se Hi  Jab We Met  Kareena Kapoor, Shahid Kapoor  Mohit Chauhan  Pritam.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-
-  <!-- Script -->
-  <script>
-    const audio = document.getElementById('romanticMusic');
-    const button = document.getElementById('musicButton');
-    let isPlaying = false;
-
-    function toggleMusic() {
-      if (!isPlaying) {
-        audio.play();
-        button.textContent = "⏹️ Stop Song";
-        isPlaying = true;
-      } else {
-        audio.pause();
-        audio.currentTime = 0;
-        button.textContent = "🎵 Our Song";
-        isPlaying = false;
-      }
-    }
-  </script>
-
 </body>
 <script>
   function stopMusic() {
@@ -845,22 +824,6 @@
     </a>
   </div>
 </div>
-
-<script>
-  const audio = document.getElementById("ourSong");
-  const playButton = document.getElementById("playMusic");
-
-  playButton.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play();
-      playButton.textContent = "⏸ Pause Audio";
-    } else {
-      audio.pause();
-      playButton.textContent = "▶️ My heart never misses a beat to say -";
-    }
-  });
-</script>
-
     </footer>
 
     <!-- Modal for Adding Photos -->
@@ -1402,6 +1365,58 @@ Your Loving Partner 💖</textarea>
             }, 3000);
         });
     </script>
+<!-- Both Songs Script -->
+<script>
+  const song1 = document.getElementById("romanticMusic");
+  const song2 = document.getElementById("ourSong");
 
+  const button1 = document.getElementById("musicButton");
+  const button2 = document.getElementById("playMusic");
+
+  let isPlaying1 = false;
+  let isPlaying2 = false;
+
+  function toggleMusic1() {
+    if (!isPlaying1) {
+      song1.play();
+      button1.textContent = "⏹️ Stop Song";
+      isPlaying1 = true;
+
+      // Stop other song
+      song2.pause();
+      song2.currentTime = 0;
+      button2.textContent = "▶️ My heart never misses a beat to say -";
+      isPlaying2 = false;
+    } else {
+      song1.pause();
+      song1.currentTime = 0;
+      button1.textContent = "🎵 Our Song";
+      isPlaying1 = false;
+    }
+  }
+
+  function toggleMusic2() {
+    if (!isPlaying2) {
+      song2.play();
+      button2.textContent = "⏸ Pause Audio";
+      isPlaying2 = true;
+
+      // Stop other song
+      song1.pause();
+      song1.currentTime = 0;
+      button1.textContent = "🎵 Our Song";
+      isPlaying1 = false;
+    } else {
+      song2.pause();
+      song2.currentTime = 0;
+      button2.textContent = "▶️ My heart never misses a beat to say -";
+      isPlaying2 = false;
+    }
+  }
+
+  // Rebind buttons to use these fixed functions
+  button1.onclick = toggleMusic1;
+  button2.onclick = toggleMusic2;
+</script>
 </body>
 </html>
