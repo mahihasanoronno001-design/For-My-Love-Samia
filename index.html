@@ -817,13 +817,75 @@
     <source src="Assets/Abhi Na Jaao Chhod Kar _ Dev Anand _ Sadhana _ Mohd Rafi _ Asha Bhosle _ Hum Dono (1961).mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-  <div class="mt-4">
-    <a href="https://youtu.be/mfEQgoVi7P4?list=RDmfEQgoVi7P4" target="_blank"
-      class="inline-block bg-red-600 text-white px-4 py-2 rounded-full shadow hover:bg-red-700 transition">
-      ▶️ Watch on YouTube
-    </a>
-  </div>
+ <!-- Video Section -->
+<div class="mt-6 flex flex-col items-center space-y-4">
+  <button id="playVideo" class="bg-pink-600 text-white px-6 py-2 rounded-xl shadow-lg hover:bg-pink-700 transition transform hover:scale-105">
+    ▶️ I just wanna say ~
+  </button>
+
+  <video id="ourVideo" width="640" height="360" class="rounded-lg shadow-lg opacity-0 transition-opacity duration-700" style="display:none;">
+    <source src="Assets/myvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </div>
+
+<script>
+  const video = document.getElementById("ourVideo");
+  const playBtn = document.getElementById("playVideo");
+
+  function showConfetti() {
+    for (let i = 0; i < 40; i++) {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.backgroundColor = ["#ff69b4", "#ff1493", "#ffb6c1", "#db7093", "#ff85a2"][Math.floor(Math.random() * 5)];
+      document.body.appendChild(confetti);
+
+      confetti.animate(
+        [
+          { transform: `translateY(0) rotate(0deg)`, opacity: 1 },
+          { transform: `translateY(100vh) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+        ],
+        { duration: Math.random() * 2000 + 1500, easing: "ease-out" }
+      ).onfinish = () => confetti.remove();
+    }
+  }
+
+  playBtn.addEventListener("click", () => {
+    if (video.style.display === "none") {
+      video.style.display = "block";
+      setTimeout(() => video.classList.add("opacity-100"), 10);
+      video.play();
+      playBtn.textContent = "💖 Playing for you...";
+      showConfetti();
+    } else if (!video.paused) {
+      video.pause();
+      playBtn.textContent = "▶️ I just wanna say ~";
+    } else {
+      video.play();
+      playBtn.textContent = "💖 Playing for you...";
+      showConfetti();
+    }
+  });
+
+  video.addEventListener("ended", () => {
+    video.classList.remove("opacity-100");
+    setTimeout(() => { video.style.display = "none"; }, 700);
+    playBtn.textContent = "▶ Replay";
+  });
+</script>
+
+<style>
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    opacity: 0.9;
+    z-index: 9999;
+    pointer-events: none;
+  }
+</style>
     </footer>
 
     <!-- Modal for Adding Photos -->
